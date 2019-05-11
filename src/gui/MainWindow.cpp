@@ -6,6 +6,7 @@
 #include "SelectContainer.h"
 #include "SelectIngredient.h"
 
+#include "GuiUtils.h"
 #include "Lot.h"
 
 #include <QFileDialog>
@@ -21,6 +22,12 @@ MainWindow::MainWindow(QWidget *parent)
     m_addIngredient = new AddIngredient(this);
     m_selectContainer = new SelectContainer(this);
     m_selectIngredient = new SelectIngredient(this);
+
+    guiutils::centerOnScreen(this);
+    guiutils::centerOnScreen(m_addContainer);
+    guiutils::centerOnScreen(m_addIngredient);
+    guiutils::centerOnScreen(m_selectContainer);
+    guiutils::centerOnScreen(m_selectIngredient);
 
     connect(ui->buttonAddIngredient, &QPushButton::released, this, &MainWindow::handleButtonAddIngredient);
     connect(ui->buttonRemoveIngredient, &QPushButton::released, this, &MainWindow::handleButtonRemoveIngredient);

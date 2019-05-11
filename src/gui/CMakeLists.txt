@@ -39,6 +39,7 @@ add_executable(gescoice
   addcontainer.ui
   AddIngredient.cpp
   addingredient.ui
+  GuiUtils.cpp
   MainWindow.cpp
   mainwindow.ui
   SelectContainer.cpp
