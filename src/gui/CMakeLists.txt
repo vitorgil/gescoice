@@ -45,21 +45,24 @@ add_executable(gescoice
   selectcontainer.ui
   SelectIngredient.cpp
   selectingredient.ui
-  resources.qrc)
+  resources.qrc
+)
 
 # Add the Qt5 Widgets for linking
 target_link_libraries(gescoice Qt5::Widgets core)
 
 install(TARGETS gescoice RUNTIME DESTINATION bin)
 
-install(
-  FILES
-    "C:/Qt/5.12.3/mingw73_64/bin/Qt5Widgets.dll"
-    "C:/Qt/5.12.3/mingw73_64/bin/Qt5Core.dll"
-    "C:/Qt/5.12.3/mingw73_64/bin/Qt5Gui.dll"
-    "C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/libgcc_s_seh-1.dll"
-    "C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/libstdc++-6.dll"
-    "C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/libwinpthread-1.dll"
-  DESTINATION
-    bin
-)
+if (WIN32)
+  install(
+    FILES
+      "C:/Qt/5.12.3/mingw73_64/bin/Qt5Widgets.dll"
+      "C:/Qt/5.12.3/mingw73_64/bin/Qt5Core.dll"
+      "C:/Qt/5.12.3/mingw73_64/bin/Qt5Gui.dll"
+      "C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/libgcc_s_seh-1.dll"
+      "C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/libstdc++-6.dll"
+      "C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/libwinpthread-1.dll"
+    DESTINATION
+      bin
+  )
+endif()

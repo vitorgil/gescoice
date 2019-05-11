@@ -9,7 +9,6 @@ void saveJson(const QString& fileName, const QJsonDocument& doc)
     QFile file(fileName);
     if (!file.open(QIODevice::WriteOnly))
     {
-        qWarning("Couldn't open file.");
         return;
     }
 
@@ -21,7 +20,6 @@ QJsonDocument readJson(const QString& fileName)
     QFile file(fileName);
     if (!file.open(QIODevice::ReadOnly))
     {
-        qWarning("Couldn't open file");
         return {};
     }
 
