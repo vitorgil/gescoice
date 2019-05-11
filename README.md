@@ -13,5 +13,5 @@ Depends on qt5 and googletest.
 Create build folder and run the build script appropriate for your platform. Example:
 ```
 mkdir build && cd build
-../build.ps1 sh
+../build.sh
 ```
