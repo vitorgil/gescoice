@@ -5,4 +5,4 @@ set (CMAKE_PREFIX_PATH "C:/Qt/5.12.3/mingw73_64/lib/cmake/Qt5")
 set (GTEST_ROOT "C:/googletest-distribution")
 
 add_subdirectory(src)
-#add_subdirectory(test)
+add_subdirectory(test)
