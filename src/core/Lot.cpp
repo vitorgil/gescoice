@@ -51,6 +51,8 @@ const QMap<QString, double>& Lot::getLastPrices() const
 
 void Lot::calculatePrices()
 {
+    m_lastPrices.clear();
+
     double totalPrice = 0.0;    
     for (auto it = m_ingredientQuantities.constBegin(); it != m_ingredientQuantities.constEnd(); ++it)
     {
@@ -63,9 +65,13 @@ void Lot::calculatePrices()
         lotTotalVolume += it.value();
     }
 
+    if (totalPrice <= 0.0 || lotTotalVolume <= 0.0)
+    {
+        return;
+    }
+
     auto lotPricePerLiter = totalPrice / lotTotalVolume;
 
-    m_lastPrices.clear();
     for (auto it = m_containers.constBegin(); it != m_containers.constEnd(); ++it)
     {
         const auto& container = Containers::get(it.key());

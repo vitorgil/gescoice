@@ -71,7 +71,7 @@ public:
 
     ContainerPtr get(const QString& name)
     {
-        return m_containers.find(name).value();
+        return m_containers.constFind(name).value();
     }
 
     const ContainerMap& getAll()
