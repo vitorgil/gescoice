@@ -36,15 +36,15 @@ find_package(Qt5 REQUIRED COMPONENTS Widgets)
 add_executable(gescoice 
   main.cpp
   AddContainer.cpp
-  AddContainer.ui
+  addcontainer.ui
   AddIngredient.cpp
-  AddIngredient.ui
+  addingredient.ui
   MainWindow.cpp
-  MainWindow.ui
+  mainwindow.ui
   SelectContainer.cpp
-  SelectContainer.ui
+  selectcontainer.ui
   SelectIngredient.cpp
-  SelectIngredient.ui
+  selectingredient.ui
   resources.qrc)
 
 # Add the Qt5 Widgets for linking
